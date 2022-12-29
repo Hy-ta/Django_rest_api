@@ -10,3 +10,12 @@ class QuizSerializer(serializers.Serializer):
 
     def create(self, data):
         return Quiz.objects.create(**data)
+
+# virtualenv .ps
+
+# source bin/activate
+# pip install utmp
+
+# python -m pip install Django
+# pip3 install djangorestframework
+# python manage.py runserver
