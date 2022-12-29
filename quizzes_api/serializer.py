@@ -19,3 +19,5 @@ class QuizSerializer(serializers.Serializer):
 # python -m pip install Django
 # pip3 install djangorestframework
 # python manage.py runserver
+
+# /Users/hyuga/newproject/quiz/quizzes
