@@ -8,6 +8,15 @@ from quizzes_api.models import Quiz
 # import serializers
 from quizzes_api.serializer import QuizSerializer
 
+
+@api_view(["GET"])
+def home(request):
+    return render(request, "home.html", {})
+
+@api_view(["GET"])
+def quizzes(request):
+    return render(request, "quizzes.html", {})
+
 # A quiz_list function 
 @api_view(["GET"])
 def quiz_list(request):
