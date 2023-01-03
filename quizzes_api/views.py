@@ -20,28 +20,11 @@ def questions(request):
     quizzes = Quiz.objects.all()
     serializer = QuizSerializer(quizzes, many=True)
     # This will return our data in JSON format 
-    
-    quiz_1 = {
-        'quiz_name' : "what is 1 + 1 ?",
-        'quiz_answer' : "option_3",
-        'option_1' : "3",
-        'option_2' : "4",
-        'option_3' : "2",
-        'option_4' : "1",
-        'score_to_pass' : "50"
-    }
-    quiz_2 = {
-        'quiz_name' : "What are two colors that imply a desire and calm?",
-        'quiz_answer' : ["option_1", "option_3"],
-        'option_1' : "red",
-        'option_2' : "yellow",
-        'option_3' : "blue",
-        'option_4' : "black",
-        'score_to_pass' : "50"
-    }
-    quiz_lists = [quiz_1, quiz_2]
+    quiz_1 = Quiz(quiz_list = 1, title = "what is 1 + 1 ?", score_to_pass = 50)
+    quiz_1.save()
+    # quiz_lists = [quiz_1, quiz_2]
     print(request)
-    return render(request, "base.html", {serializer:serializer})
+    return render(request, "base.html", {quiz_1})
 
 @api_view(["POST"])
 def quiz_answer(request):
